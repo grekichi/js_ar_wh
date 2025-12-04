@@ -7,7 +7,10 @@
 
     <body style="margin : 0px; overflow: hidden;">
         <!-- AR.jsのデバッグとA-FrameのVRボタンを非表示 -->
-        <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false;">
+        <a-scene
+            embedded arjs="sourceType: webcam; debugUIEnabled: false;"
+            vr-mode-ui="enabled: false;"
+        >
             <a-assets>
                 <a-asset-item id="obj" src="model/Dachshund.obj"></a-asset-item>
                 <a-asset-item id="obj" src="model/Dachshund-bl.obj"></a-asset-item>
