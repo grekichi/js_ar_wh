@@ -5,9 +5,9 @@
     <!-- AR.jsの読み込み -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <!-- A-Frame-extrasの読み込み: animationモデル用 -->
-    <!-- <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v7.6.0/dist/aframe-extras.min.js"></script> -->
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v7.6.0/dist/aframe-extras.min.js"></script>
     <!-- FBX modelの読み込みに使用 -->
-    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.6.1/dist/aframe-extras.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.6.1/dist/aframe-extras.min.js"></script> -->
 
     <body style="margin : 0px; overflow: hidden;">
         <!-- AR.jsのデバッグとA-FrameのVRボタンを非表示 -->
@@ -24,7 +24,7 @@
                 <!-- <a-asset-item id="model" src="./model/gltf/Wolf-Blender-2.82a.glb"></a-asset-item> -->
                 
                 <!-- ユニコーン3Dアニメーションモデル -->
-                <!-- <a-asset-item id="model" src="./model/unicorn/model_unicorn.glb"></a-asset-item> -->
+                <a-asset-item id="model" src="./model/unicorn/model_unicorn.glb"></a-asset-item>
             </a-assets>
             <!-- a-markerのtypeにpatternを設定し、作ったpattファイルをurlに指定 -->
             <a-marker preset="custom" type="pattern" url="pattern-qr_pcjs.patt">
@@ -35,10 +35,10 @@
                 <!-- <a-entity gltf-model="#model" scale="1 1 1" position="0 0 0" rotation="0 1 0" animation-mixer></a-entity> -->
                 
                 <!-- ユニコーンモデル -->
-                <!-- <a-entity gltf-model="#model" scale="1 1 1" position="0 1 0" rotation="0 0 0" animation-mixer></a-entity> -->
+                <a-entity gltf-model="#model" scale="1 1 1" position="0 1 0" rotation="0 0 0" animation-mixer></a-entity>
 
-                <!-- ユニコーンFBXモデル -->
-                <a-entity fbx-model="src: url(./model/unicorn/model_unicorn.fbx);" scale="1 1 1" position="0 1 0" rotation="0 0 0" animation-mixer></a-entity>
+                <!-- FBXモデル -->
+                <!-- <a-entity fbx-model="src: url(./model/unicorn/model_unicorn.fbx);" scale="1 1 1" position="0 1 0" rotation="0 0 0" animation-mixer></a-entity> -->
             </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
