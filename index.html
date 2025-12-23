@@ -19,20 +19,14 @@
             <a-assets>
                 <!-- <a-asset-item id="obj" src="./model/gltf/unicorn.obj"></a-asset-item> -->
                 <!-- <a-asset-item id="mtl" src="./model/gltf/unicorn.mtl"></a-asset-item> -->
-
-                <!-- wolf3Dアニメーションモデル -->
-                <!-- <a-asset-item id="model" src="./model/gltf/Wolf-Blender-2.82a.glb"></a-asset-item> -->
                 
-                <!-- ユニコーン3Dアニメーションモデル -->
+                <!-- targetアニメーションモデル -->
                 <a-asset-item id="model" src="./model/unicorn/unicorn_final.glb"></a-asset-item>
             </a-assets>
             <!-- a-markerのtypeにpatternを設定し、作ったpattファイルをurlに指定 -->
-            <a-marker preset="custom" type="pattern" url="pattern-qr_pcjs.patt">
+            <a-marker preset="custom" type="pattern" url="pattern-qr-26ny.patt">
                 <!-- 赤い立方体を表示 -->
                 <!-- <a-box position="0 1 0" width="3" height="3" depth="3" color="blue"></a-box> -->
-
-                <!-- wolf3Dアニメーションモデル -->
-                <!-- <a-entity gltf-model="#model" scale="1 1 1" position="0 0 0" rotation="0 1 0" animation-mixer></a-entity> -->
                 
                 <!-- ユニコーンモデル -->
                 <a-entity gltf-model="#model" scale="1 1 1" position="0 0.2 0" rotation="0 0 0" animation-mixer></a-entity>
