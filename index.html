@@ -35,7 +35,7 @@
                 <a-entity gltf-model="#model" scale="1 1 1" position="0 0.2 0" rotation="0 0 0" animation-mixer></a-entity>
 
                 <!-- 文字回転のアニメーション -->
-                <a-entity rotation="0 0 0" animation="property: rotation; to: 0 -360 0; loop: true; dur: 10000; easing: linear">
+                <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: easeInOutCirc; dir: reverse">
                     <a-image src="#ny_string" width="3" height="3" rotation="-90 0 0"></a-image>
                 </a-entity>
 
