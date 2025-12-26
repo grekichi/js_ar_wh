@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+    <!-- A-Frameの読み込み -->
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <!-- AR.jsの読み込み -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <!-- A-Frame-extrasの読み込み: animationモデル用 -->
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v7.6.0/dist/aframe-extras.min.js"></script>
+    <!-- FBX modelの読み込みに使用 -->
+    <!-- <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.6.1/dist/aframe-extras.min.js"></script> -->
+
+    <body style="margin : 0px; overflow: hidden;">
+        <!-- AR.jsのデバッグとA-FrameのVRボタンを非表示 -->
+        <a-scene
+            embedded arjs="sourceType: webcam; debugUIEnabled: false;"
+            vr-mode-ui="enabled: false;"
+            renderer="gammaOutput: true;"
+        >
+            <a-assets>
+                <!-- <a-asset-item id="obj" src="./src/model/gltf/unicorn.obj"></a-asset-item> -->
+                <!-- <a-asset-item id="mtl" src="./src/model/gltf/unicorn.mtl"></a-asset-item> -->
+                
+                <!-- targetアニメーションモデル -->
+                <a-asset-item id="model" src="./src/model/unicorn/unicorn_final.glb"></a-asset-item>
+
+                <!-- 文字画像 -->
+                <img id="ny_string" src="./src/picture/ny_string.png">
+            </a-assets>
+            <!-- a-markerのtypeにpatternを設定し、作ったpattファイルをurlに指定 -->
+            <a-marker preset="custom" type="pattern" url="pattern-qr-26ny.patt">
+                <!-- 赤い立方体を表示 -->
+                <!-- <a-box position="0 1 0" width="3" height="3" depth="3" color="blue"></a-box> -->
+                
+                <!-- ユニコーンモデル -->
+                <a-entity gltf-model="#model" scale="1 1 1" position="0 0.2 0" rotation="0 -60 0" animation-mixer></a-entity>
+
+                <!-- 文字回転のアニメーション -->
+                <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear; dir: reverse">
+                    <a-image src="#ny_string" width="3" height="3" rotation="-90 0 0"></a-image>
+                </a-entity>
+
+                <!-- FBXモデル -->
+                <!-- <a-entity fbx-model="src: url(./src/model/unicorn/model_unicorn.fbx);" scale="1 1 1" position="0 1 0" rotation="0 0 0" animation-mixer></a-entity> -->
+            </a-marker>
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
