@@ -23,21 +23,25 @@
             arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
             renderer="antialias: true; alpha: true"
         >
-        <!-- <a-text
-            value="This content will always face you."
-            look-at="[gps-new-camera]"
-            scale="120 120 120"
-            gps-entity-place="latitude: 34.686; longitude: 137.674;"
-        ></a-text> -->
-        <a-camera
-            id="camera1"
-            look-controls-enabled="false"
-            arjs-device-orientation-controls="smoothingFactor: 0.1"
-            gps-new-camera="gpsMinDistance: 5; simulateLatitude: 34.686; simulateLongitude: 137.674"
-        ></a-camera>
-
-        <!-- UPDATEモデル -->
-        <a-entity gltf-model="#model" scale="1 1 1" position="0 0.2 0" rotation="0 0 0" animation-mixer></a-entity>
+            <!-- <a-text
+                value="This content will always face you."
+                look-at="[gps-new-camera]"
+                scale="120 120 120"
+                gps-entity-place="latitude: 34.686; longitude: 137.674;"
+            ></a-text> -->
+            <a-camera
+                id="camera1"
+                look-controls-enabled="false"
+                arjs-device-orientation-controls="smoothingFactor: 0.1"
+                gps-new-camera="gpsMinDistance: 5; simulateLatitude: 34.686; simulateLongitude: 137.674"
+            ></a-camera>
+    
+            <a-assets>
+                <!-- targetアニメーションモデル -->
+                <a-asset-item id="model" src="../../../src/model/gltf/godotman.glb"></a-asset-item>
+            </a-assets>
+            <!-- UPDATEモデル -->
+            <a-entity gltf-model="#model" gps-new-entity-place="latitude: 34.687; longitude: 137.674" scale="100 100 100" position="0 1 0" animation-mixer></a-entity>
         </a-scene>
     </body>
 </html>
