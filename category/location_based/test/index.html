@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>my original demo</title>
         <!-- A-Frameの読み込み -->
-        <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+        <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
         
         <!-- <!-- AR.jsの読み込み -->
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -32,8 +32,8 @@
         -->
         <a-scene
             vr-mode-ui="enabled: false"
-            arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
-            <!-- renderer="antialias: true; alpha: true" -->
+            arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
+            renderer="logarithmicDepthBuffer: true"
         >
             <!-- <a-text
                 value="This content will always face you."
