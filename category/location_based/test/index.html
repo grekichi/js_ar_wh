@@ -5,13 +5,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>my original demo</title>
         <!-- A-Frameの読み込み -->
-        <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
-        <!-- AR.jsの読み込み -->
+        <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+        
+        <!-- <!-- AR.jsの読み込み -->
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <!-- A-Frame-extrasの読み込み: animationモデル用 -->
-        <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v7.6.0/dist/aframe-extras.min.js"></script>
-        <!-- <!-- AR.js A-Frame components -->
-        <script src='https://raw.githack.com/AR-js-org/AR.js/3.4.7/aframe/build/aframe-ar.js'></script> -->
+        <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v7.6.0/dist/aframe-extras.min.js"></script> -->
+        
+        <!-- AR.js A-Frame components -->
+        <script src='https://raw.githack.com/AR-js-org/AR.js/3.4.7/aframe/build/aframe-ar.js'></script>
+
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
     </head>
 
     <body>
@@ -24,7 +33,7 @@
         <a-scene
             vr-mode-ui="enabled: false"
             arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
-            renderer="antialias: true; alpha: true"
+            <!-- renderer="antialias: true; alpha: true" -->
         >
             <!-- <a-text
                 value="This content will always face you."
@@ -44,7 +53,7 @@
                 <a-asset-item id="model" src="../../../src/model/gltf/godotman.glb"></a-asset-item>
             </a-assets>
             <!-- UPDATEモデル -->
-            <a-entity gltf-model="#model" gps-new-entity-place="latitude: 34.687; longitude: 137.674" scale="100 100 100" position="0 1 0" animation-mixer></a-entity>
+            <a-entity gltf-model="#model" gps-new-entity-place="latitude: 34.687; longitude: 137.674" scale="10 10 10" animation-mixer></a-entity>
         </a-scene>
     </body>
 </html>
