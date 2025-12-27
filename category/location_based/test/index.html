@@ -12,21 +12,28 @@
     </head>
 
     <body>
+        <!-- 
+        This is using a simulated location. If testing on a mobile device, remove the 
+        'simulateLatitude' and 'simulateLongitude' properties from 'gps-new-camera' and
+        change the 'latitude' and 'longitude' properties to a location around 0.001 
+        degrees from your real location.
+        -->
         <a-scene
             vr-mode-ui="enabled: false"
             arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
+            renderer="antialias: true; alpha: true"
         >
-        <a-text
+        <!-- <a-text
             value="This content will always face you."
             look-at="[gps-new-camera]"
             scale="120 120 120"
             gps-entity-place="latitude: 34.686; longitude: 137.674;"
-        ></a-text>
+        ></a-text> -->
         <a-camera
             id="camera1"
             look-controls-enabled="false"
             arjs-device-orientation-controls="smoothingFactor: 0.1"
-            gps-new-camera="gpsMinDistance: 5"
+            gps-new-camera="gpsMinDistance: 5; simulateLatitude: 34.686; simulateLongitude: 137.674"
         ></a-camera>
         </a-scene>
     </body>
