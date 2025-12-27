@@ -17,14 +17,14 @@
             renderer="gammaOutput: true;"
         >
             <a-assets>
-                <!-- <a-asset-item id="obj" src="./src/model/gltf/unicorn.obj"></a-asset-item> -->
-                <!-- <a-asset-item id="mtl" src="./src/model/gltf/unicorn.mtl"></a-asset-item> -->
+                <!-- <a-asset-item id="obj" src="../../../src/model/gltf/unicorn.obj"></a-asset-item> -->
+                <!-- <a-asset-item id="mtl" src="../../../src/model/gltf/unicorn.mtl"></a-asset-item> -->
                 
                 <!-- targetアニメーションモデル -->
-                <a-asset-item id="model" src="./src/model/unicorn/unicorn_final.glb"></a-asset-item>
+                <a-asset-item id="model" src="../../../src/model/unicorn/unicorn_final.glb"></a-asset-item>
 
                 <!-- 文字画像 -->
-                <img id="ny_string" src="./src/picture/ny_string.png">
+                <img id="ny_string" src="../../../src/picture/ny_string.png">
             </a-assets>
             <!-- a-markerのtypeにpatternを設定し、作ったpattファイルをurlに指定 -->
             <a-marker preset="custom" type="pattern" url="pattern-qr-26ny.patt">
@@ -40,7 +40,7 @@
                 </a-entity>
 
                 <!-- FBXモデル -->
-                <!-- <a-entity fbx-model="src: url(./src/model/unicorn/model_unicorn.fbx);" scale="1 1 1" position="0 1 0" rotation="0 0 0" animation-mixer></a-entity> -->
+                <!-- <a-entity fbx-model="src: url(../../../src/model/unicorn/model_unicorn.fbx);" scale="1 1 1" position="0 1 0" rotation="0 0 0" animation-mixer></a-entity> -->
             </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
