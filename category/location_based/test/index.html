@@ -30,10 +30,10 @@
         change the 'latitude' and 'longitude' properties to a location around 0.001 
         degrees from your real location.
         -->
+            <!-- "sourceType: webcam; videoTexture: true;"  -->
         <a-scene
             vr-mode-ui="enabled: false"
             arjs="debugUIEnabled: false"
-            <!-- "sourceType: webcam; videoTexture: true;"  -->
             renderer="logarithmicDepthBuffer: true"
             device-orientation-permission-ui="enabled: true"
         >
@@ -41,8 +41,7 @@
                 id="camera1"
                 look-controls-enabled="false"
                 arjs-device-orientation-controls="smoothingFactor: 0.1"
-                gps-new-camera="gpsMinDistance: 0" 
-                            <!-- PCの場合は、右記追記する "simulateLatitude: 34.686; simulateLongitude: 137.674" -->
+                gps-new-camera="gpsMinDistance: 0; simulateLatitude: 34.686; simulateLongitude: 137.674"
             ></a-camera>
     
             <a-assets>
