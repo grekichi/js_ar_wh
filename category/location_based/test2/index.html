@@ -20,6 +20,13 @@
             scale="120 120 120"
             gps-entity-place="latitude: 34.686; longitude: 137.674;"
         ></a-text>
+
+        <a-assets>
+            <!-- targetアニメーションモデル -->
+            <a-asset-item id="model" src="../../../src/model/gltf/godotman.glb"></a-asset-item>
+        </a-assets>
+        <!-- UPDATEモデル -->
+        <a-entity gltf-model="#model" gps-entity-place="latitude: 34.687; longitude: 137.674" scale="10 10 10" animation-mixer></a-entity>
         <a-camera gps-camera rotation-reader> </a-camera>
         </a-scene>
     </body>
