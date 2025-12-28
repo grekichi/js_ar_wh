@@ -36,14 +36,10 @@
         <a-scene
             vr-mode-ui="enabled: false"
             arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
-            renderer="logarithmicDepthBuffer: true"
-            device-orientation-permission-ui="enabled: true"
         >
             <a-camera
-                id="camera1"
-                look-controls-enabled="false"
-                arjs-device-orientation-controls="smoothingFactor: 0.1"
-                gps-new-camera="gpsMinDistance: 0; simulateLatitude: 34.686; simulateLongitude: 137.675"
+                gps-camera="gpsMinDistance: 0; simulateLatitude: 34.686; simulateLongitude: 137.675"
+                rotation-reader
             ></a-camera>
     
             <a-assets>
@@ -51,10 +47,10 @@
                 <a-asset-item id="model" src="../../../src/model/gltf/godotman.glb"></a-asset-item>
             </a-assets>
             <!-- UPDATEモデル -->
-            <a-entity gltf-model="#model" gps-new-entity-place="latitude: 34.686; longitude: 137.675" scale="10 10 10" animation-mixer></a-entity>
+            <a-entity gltf-model="#model" gps-entity-place="latitude: 34.686; longitude: 137.675" scale="10 10 10" animation-mixer></a-entity>
             <!-- test用テキスト -->
             <a-entity
-              gps-new-entity-place="latitude: 34.687; longitude: 137.675"
+              gps-entity-place="latitude: 34.687; longitude: 137.675"
               text="value: 東京駅付近; color: yellow; align: center; width: 10;"
               scale="10 10 10"
             ></a-entity>
