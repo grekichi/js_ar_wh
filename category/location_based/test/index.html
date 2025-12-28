@@ -37,12 +37,19 @@
             renderer="logarithmicDepthBuffer: true"
             device-orientation-permission-ui="enabled: true"
         >
-            <a-camera
+            <!-- <a-camera
                 id="camera1"
                 look-controls-enabled="false"
                 arjs-device-orientation-controls="smoothingFactor: 0.1"
                 gps-new-camera="gpsMinDistance: 0; simulateLatitude: 34.686; simulateLongitude: 137.674"
-            ></a-camera>
+            ></a-camera> -->
+
+            <a-entity
+                camera
+                look-controls-enabled="false"
+                arjs-device-orientation-controls="smoothingFactor: 0.1"
+                gps-new-camera="gpsMinDistance: 0; simulateLatitude: 34.686; simulateLongitude: 137.674"
+            ></a-entity>
     
             <a-assets>
                 <!-- targetアニメーションモデル -->
