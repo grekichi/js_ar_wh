@@ -32,15 +32,11 @@
         -->
         <a-scene
             vr-mode-ui="enabled: false"
-            arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
+            arjs="debugUIEnabled: false"
+            <!-- "sourceType: webcam; videoTexture: true;"  -->
             renderer="logarithmicDepthBuffer: true"
+            device-orientation-permission-ui="enabled: true"
         >
-            <!-- <a-text
-                value="This content will always face you."
-                look-at="[gps-new-camera]"
-                scale="120 120 120"
-                gps-entity-place="latitude: 34.686; longitude: 137.674;"
-            ></a-text> -->
             <a-camera
                 id="camera1"
                 look-controls-enabled="false"
