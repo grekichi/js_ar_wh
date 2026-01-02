@@ -9,6 +9,8 @@
         
         <!-- AR.jsの読み込み -->
         <script src="https://raw.githack.com/AR-js-org/AR.js/3.4.7/aframe/build/aframe-ar.js"></script>
+        <!-- nft.jsの読み込み -->
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
         <!-- A-Frame-extrasの読み込み: animationモデル用 -->
         <!-- <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v7.6.0/dist/aframe-extras.min.js"></script> -->
         
@@ -38,7 +40,7 @@
             arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
         >
             <a-camera
-                gps-camera="gpsMinDistance: 5; simulateLatitude: 34.686; simulateLongitude: 137.674"
+                gps-camera="gpsMinDistance: 3; simulateLatitude: 34.686; simulateLongitude: 137.674"
                 rotation-reader
             ></a-camera>
     
@@ -47,7 +49,7 @@
                 <a-asset-item id="model" src="../../../src/model/gltf/godotman.glb"></a-asset-item>
             </a-assets>
             <!-- UPDATEモデル -->
-            <a-entity gltf-model="#model" gps-entity-place="latitude: 34.686; longitude: 137.674" scale="1 1 1" animation-mixer></a-entity>
+            <a-entity gltf-model="#model" gps-entity-place="latitude: 34.686; longitude: 137.674" scale="10 10 10" animation-mixer></a-entity>
             <!-- test用テキスト -->
             <a-entity
               gps-entity-place="latitude: 34.687; longitude: 137.675"
