@@ -11,6 +11,8 @@
         <script src="https://raw.githack.com/AR-js-org/AR.js/3.4.7/aframe/build/aframe-ar.js"></script>
         <!-- nft.jsの読み込み -->
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+        <!-- look.atの読み込み -->
+        <script src="https://unpkg.com/aframe-look-at-component@1.0.0/dist/aframe-look-at-component.min.js"></script>
         <!-- A-Frame-extrasの読み込み: animationモデル用 -->
         <!-- <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v7.6.0/dist/aframe-extras.min.js"></script> -->
         
@@ -40,8 +42,7 @@
             arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
         >
             <a-camera
-                gps-camera="gpsMinDistance: 3;"
-                <!-- simulateLatitude: 33.301; simulateLongitude: 129.884" -->
+                gps-camera="gpsMinDistance: 3; simulateLatitude: 34.686; simulateLongitude: 137.674"
                 rotation-reader
             ></a-camera>
     
@@ -52,10 +53,11 @@
             <!-- UPDATEモデル -->
             <a-entity gltf-model="#model" gps-entity-place="latitude: 34.686; longitude: 137.674" scale="0.2 0.2 0.2" position="0 10 0" animation-mixer></a-entity>
             <!-- test用テキスト -->
-            <a-entity
-              gps-entity-place="latitude: 34.686; longitude: 137.674"
-              text="value: 東京駅付近; color: yellow; align: center; width: 10;"
-              scale="1 1 1"
+            <a-text
+                look-at="[gps-camera]"
+                gps-entity-place="latitude: 34.686; longitude: 137.674"
+                value="東京駅付近; color: yellow; align: center; width: 10;"
+                scale="10 10 10"
             ></a-entity>
         </a-scene>
     </body>
