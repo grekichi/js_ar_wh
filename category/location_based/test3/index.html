@@ -42,7 +42,7 @@
             arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
         >
             <a-camera
-                gps-camera="gpsMinDistance: 3; simulateAltitude: 10"
+                gps-camera="gpsMinDistance: 3"
                 <!-- simulateLatitude: 34.686; simulateLongitude: 137.674" -->
                 rotation-reader
             ></a-camera>
@@ -52,15 +52,14 @@
                 <a-asset-item id="model" src="../../../src/model/gltf/ufo.glb"></a-asset-item>
             </a-assets>
             <!-- UPDATEモデル -->
-            <a-entity gltf-model="#model" gps-entity-place="latitude: 34.686; longitude: 137.674" scale="0.2 0.2 0.2" position="0 10 0" animation-mixer></a-entity>
+            <a-entity gltf-model="#model" gps-entity-place="latitude: 34.686; longitude: 137.674" scale="0.2 0.2 0.2" animation-mixer></a-entity>
             <!-- test用テキスト -->
-            <a-text
+            <a-entity
                 look-at="[gps-camera]"
                 gps-entity-place="latitude: 34.686; longitude: 137.674"
-                value="東京駅付近" 
-                <!-- color: yellow; align: center; width: 10;" -->
+                text="value: 東京駅付近; color: yellow; align: center; width: 10"
                 scale="10 10 10"
-            ></a-text>
+            ></a-entity>
         </a-scene>
     </body>
 </html>
