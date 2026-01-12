@@ -39,11 +39,10 @@
             <!-- "sourceType: webcam; videoTexture: true;"  -->
         <a-scene
             vr-mode-ui="enabled: false"
-            arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
+            arjs="sourceType: webcam; videoTexture: true; gpsMinDistance: 1; debugUIEnabled: false"
         >
             <a-camera
-                gps-camera="gpsMinDistance: 3"
-                <!-- simulateLatitude: 34.686; simulateLongitude: 137.674" -->
+                gps-camera
                 rotation-reader
             ></a-camera>
     
@@ -52,7 +51,7 @@
                 <a-asset-item id="model" src="../../../src/model/gltf/ufo.glb"></a-asset-item>
             </a-assets>
             <!-- UPDATEモデル -->
-            <a-entity gltf-model="#model" gps-entity-place="latitude: 34.686; longitude: 137.674" scale="0.2 0.2 0.2" animation-mixer></a-entity>
+            <a-entity gltf-model="#model" gps-entity-place="latitude: 34.686; longitude: 137.674;" scale="0.2 0.2 0.2" animation-mixer></a-entity>
             <!-- test用テキスト -->
             <!-- <a-text
                 look-at="[gps-camera]"
