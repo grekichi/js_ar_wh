@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>location size change demo</title>
+        <!-- A-Frameの読み込み -->
+        <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+        
+        <!-- AR.jsの読み込み -->
+        <script type="text/javascript" src="https://raw.githack.com/AR-js-org/AR.js/3.4.7/aframe/build/aframe-ar.js"></script>
+        <!-- nft.jsの読み込み -->
+        <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
+        <!-- look.atの読み込み -->
+        <!-- <script src="https://unpkg.com/aframe-look-at-component@1.0.0/dist/aframe-look-at-component.min.js"></script> -->
+        <!-- A-Frame-extrasの読み込み: animationモデル用 -->
+        <!-- <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v7.6.0/dist/aframe-extras.min.js"></script> -->
+    </head>
+
+    <body>
+        <!-- 
+        This is using a simulated location. If testing on a mobile device, remove the 
+        'simulateLatitude' and 'simulateLongitude' properties from 'gps-new-camera' and
+        change the 'latitude' and 'longitude' properties to a location around 0.001 
+        degrees from your real location.
+        -->
+        
+        <a-scene
+            embeded
+            vr-mode-ui="enabled: false"
+            arjs="sourceType: webcam; videoTexture: true; gpsMinDistance: 1; debugUIEnabled: false"
+        >
+            <a-camera
+                gps-camera
+                rotation-reader
+            ></a-camera>
+    
+            <a-assets>
+                <!-- targetアニメーションモデル -->
+                <a-asset-item id="model" src="../../../src/model/gltf/ufo.glb"></a-asset-item>
+            </a-assets>
+            <!-- UPDATEモデル -->
+            <a-entity
+                id="spot"
+                gps-entity-place="latitude: 34.686; longitude: 137.674;"></a-entity>
+                <a-entity
+                    id="model"
+                    gltf-model="#model"
+                    scale="1 1 1"
+                    position="0 10 -15"
+                    material="side: front"
+                    animation-mixer
+                ></a-entity>
+        </a-scene>
+
+        <script>
+            const spot = document.querySelector("#spot");
+            const model = document.querySelector("#model");
+
+            spot.addEventListener("gps-entity-place-update-position", (e) => {
+                const distance = e.detail.distance;  // 単位:m
+
+                // 距離に応じてスケール計算
+                // 近いほど大きく、遠いほど小さく表示
+                const maxDistance = 50;  // この距離以上は最小サイズ
+                const minScale = 1;
+                const maxScale = 5;
+
+                const clamped = Math.min(distance, maxDistance);
+                const scale = maxScale - (clamped / maxDistance) * (maxScale - minScale);
+                model.setAttribute("scale", `${scale} ${scale} ${scale}`);
+
+                // ガクつき防止処理
+                const currentScale = model.object3D.scale.x;
+                const smooth = currentScale + (scale + currentScale) * 0.1;
+                model.setAttribute("scale", `${smooth} ${smooth} ${smooth}`);
+            });
+        </script>
+    </body>
+</html>
