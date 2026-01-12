@@ -51,14 +51,14 @@
                 <a-asset-item id="model" src="../../../src/model/gltf/ufo.glb"></a-asset-item>
             </a-assets>
             <!-- UPDATEモデル -->
-            <a-entity
-                gltf-model="#model"
-                gps-entity-place="latitude: 34.686; longitude: 137.674;"
-                scale="0.05 0.05 0.05"
-                position="0 5 -5"
-                material="side: front"
-                animation-mixer
-            ></a-entity>
+            <a-entity gps-entity-place="latitude: 34.686; longitude: 137.674;"></a-entity>
+                <a-entity
+                    gltf-model="#model"
+                    scale="0.05 0.05 0.05"
+                    position="0 3 -5"
+                    material="side: front"
+                    animation-mixer
+                ></a-entity>
             <!-- test用テキスト -->
             <!-- <a-text
                 look-at="[gps-camera]"
