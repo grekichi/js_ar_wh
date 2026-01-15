@@ -46,8 +46,8 @@
                 <a-entity
                     id="model"
                     gltf-model="#model"
-                    scale="1 1 1"
-                    position="0 10 -15"
+                    scale="0.1 0.1 0.1"
+                    position="0 3 -5"
                     material="side: front"
                     animation-mixer
                 ></a-entity>
@@ -57,22 +57,23 @@
             const spot = document.querySelector("#spot");
             const model = document.querySelector("#model");
 
+            const maxDistance = 30;  // この距離以上は最小サイズ
+            const minScale = 0.1;
+            const maxScale = 1;
+            
             spot.addEventListener("gps-entity-place-update-position", (e) => {
                 const distance = e.detail.distance;  // 単位:m
 
                 // 距離に応じてスケール計算
                 // 近いほど大きく、遠いほど小さく表示
-                const maxDistance = 50;  // この距離以上は最小サイズ
-                const minScale = 1;
-                const maxScale = 5;
-
                 const clamped = Math.min(distance, maxDistance);
-                const scale = maxScale - (clamped / maxDistance) * (maxScale - minScale);
-                model.setAttribute("scale", `${scale} ${scale} ${scale}`);
+                const targeScale = maxScale - (clamped / maxDistance) * (maxScale - minScale);
 
                 // ガクつき防止処理
                 const currentScale = model.object3D.scale.x;
-                const smooth = currentScale + (scale + currentScale) * 0.1;
+                const smooth = currentScale + (targetScale - currentScale) * 0.1;
+
+                // スケール更新
                 model.setAttribute("scale", `${smooth} ${smooth} ${smooth}`);
             });
         </script>
